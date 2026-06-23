@@ -1,0 +1,38 @@
+{
+  "name": "ratewall",
+  "version": "0.1.0",
+  "description": "A Redis-backed sliding window rate limiter for Node.js, with an Express middleware adapter.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:unit": "node --test test/sliding-window-counter.test.js test/redis-store.test.js test/express-middleware.test.js",
+    "bench": "node benchmarks/run.js"
+  },
+  "keywords": [
+    "rate-limit",
+    "rate-limiter",
+    "redis",
+    "express",
+    "middleware",
+    "sliding-window"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "ioredis": ">=5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ioredis": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "ioredis": "^5.4.1",
+    "express": "^4.19.2",
+    "supertest": "^7.0.0",
+    "autocannon": "^7.15.0"
+  }
+}
